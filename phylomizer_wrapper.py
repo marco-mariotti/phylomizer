@@ -219,8 +219,8 @@ def main(args={}):
       tree=Tree(best_ml_tree_file)
       for new_id in id2title: 
         node=tree&new_id 
-        node.name=    id2title[new_id]
-        write('Restoring titles in output tree ... ', 1)
+        node.name=    id2title[new_id].split()[0]
+      write('Restoring titles in output tree ... ', 1)
       write_to_file(  tree.write(format=0), best_ml_tree_file+'.restored_titles' )  
       best_ml_tree_file= best_ml_tree_file+'.restored_titles'
 
